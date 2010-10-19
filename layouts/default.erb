@@ -1,0 +1,168 @@
+<%
+  # may be set by partials
+  @config[:include_disqus_js] = false
+
+  def keywords
+    if is_front_page?
+      tag_set.join(', ') 
+    else
+      tags = @item[:tags].nil? ? '' : @item[:tags].join(', ') 
+      keywords = @item[:keywords] || ''
+      [keywords, tags].join(', ')
+    end
+  end
+
+  def link_unless_current(s)
+    "<li><a href='/#{s}.html'>#{s}</a></li>" if @item.identifier != "/#{s}/" 
+  end
+
+  def logo
+    if is_front_page?
+      site_name
+    else
+      "<a href='/'>&laquo; #{site_name}</a>"
+    end
+  end
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>
+<%= @item[:title] %> - <%= @config[:site_name] %>
+</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="RedmineBlog.com is the official blog for the Redmine Project Management application." />
+<meta name="keywords" content="redmine.org,plugins,issue,bug,tracker,project management, little stream software, edavis10" />
+<link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/syntax.css" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/atom+xml" title="<%= @config[:site_name] %>" href="<%= @config[:global_feed] %>"/>
+<!--[if IE]>
+    <style type="text/css">
+      * html body{ width: expression( document.documentElement.clientWidth < 900 ? '900px' : '100%' ); }
+      body {behavior: url(/stylesheets/csshover.htc);}
+    </style>
+<![endif]-->
+</head>
+<body>
+<div id="wrapper">
+<div id="top-menu">
+    <div id="account">
+      
+    </div>
+</div>
+      
+<div id="header">
+  <%#
+  TODO: Search
+    <div id="quick-search">
+      <form method="get" id="sform" action="/search">
+        <label for="q">Search:</label>
+        <input type="text" id="q" value="" name="q" size="20" class="small" />
+      </form>
+    </div>
+  %>
+    
+    <h1>
+      <a href="/">
+        <%= @config[:site_name] %>
+      </a>
+    </h1>
+    
+    <div id="main-menu">
+      <ul>
+        <%# TODO: select current category %>
+        <li><a class="selected" href="/" title="Home">Home</a></li>
+        <li><a class="" href="/community.html" title="Community">Community</a></li>
+        <li><a class="" href="/code.html" title="Code">Code</a></li>
+        <li><a class="" href="/plugins.html" title="Plugins">Plugins</a></li>
+        <li><a class="" href="/themes.html" title="Themes">Themes</a></li>
+        <li><a class="" href="/articles/about" title="About">About</a></li>
+        <li>
+          <a href="https://projects.littlestreamsoftware.com/projects/redmine-blog/issues" target="_blank">Feedback</a>
+        </li>
+      </ul>
+    </div>
+</div>
+
+<div id="main">
+  {% include sidebar.html %}
+    <div id="content">
+      {{ content }}
+    </div>
+</div>
+
+	
+</div>
+
+<div id="footer">
+  <a href="http://www.redmineblog.com">RedmineBlog.com</a> is Copyright &copy; Little Stream Software.  <a href="http://www.redmine.org">Redmine</a> is Copyright &copy; Jean-Philippe Lang
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-216202-7");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+</body>
+</html>
+<%# TODO: pick though the haml for some good code to add
+
+!!! Strict
+%html
+  %head
+    %title= "#{@item[:title]}"
+    %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
+    %meta(name="keywords" content="#{keywords}")
+    %meta(name="description" content="#{@item[:excerpt]}")
+    %link(href="/assets/css/reset.css" rel="stylesheet" type="text/css")
+    %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
+
+  %body
+    -# needed since some content render <pre> blocks
+    - content = find_and_preserve(yield)
+    #main
+      #header 
+        .logo
+          = logo
+        #nav
+          %ul
+            != link_unless_current "about"
+            != link_unless_current "archives"
+            != link_unless_current "tags"
+            %li
+              %a(href='/atom.xml') rss
+            %li
+              %a(href='/license.html') license
+      .clear
+
+      - if @item[:kind] == 'article'
+        = render('_article', :item => @item, :content => content)
+        = render('_other_articles_nav', :reference_item => @item)
+        .clear
+        - if disqus_shortname && !is_front_page?
+          = render('_disqus', :item => @item)
+      - else
+        = content
+      .clear
+
+    -# disqus: inserts number of commments     
+    - if @config[:include_disqus_js] == true
+      :javascript
+        (function() {
+          var links = document.getElementsByTagName('a');
+          var query = '?';
+          for(var i = 0; i < links.length; i++) {
+            if(links[i].href.indexOf('#disqus_thread') >= 0) {
+              query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+            }
+          }
+          document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/#{disqus_shortname}/get_num_replies.js' + query + '"></' + 'script>');
+        })();
+ 
+    = render('_ganalytics')
+%>

@@ -23,7 +23,7 @@ google_analytics:
   site_id: UA-9655468-1
 
 # currently used by logo
-site_name: nanoc3_blog
+site_name: Redmine Blog - The Official Redmine blog
 
 # number of full featured posts to display on front
 featured_count: 0
@@ -37,3 +37,12 @@ other_articles_max: 3
 # DISQUS Site Shortname. Comment out to disable.
 disqus_shortname: nanoc3-blog
 
+site_url: http://redmineblog.com
+site_author: Eric Davis
+site_author_email: 'edavis@littlestreamsoftware.com'
+paginate: 10
+global_feed: 'http://feeds2.feedburner.com/RedmineBlog'
+email_feed: 'http://feedburner.google.com/fb/a/mailverify?uri=RedmineBlog'
+permalink: '/articles/:title'
+markdown: rdiscount
+pygments: true

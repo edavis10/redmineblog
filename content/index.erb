@@ -1,7 +1,3 @@
----
-title: nanoc3 blog starter kit
----
-
 <div id="sticky">
   <% item = item_by_identifier('/sticky/') %>
   <% if item[:title] %>
@@ -15,20 +11,13 @@ title: nanoc3 blog starter kit
 <% oldest_item = nil %>
 <% current_index = 0 %>
 
-<% sorted_articles[current_index, featured_count].each do |item| %>
-  <% oldest_item = item %>
-  <% current_index += 1 %>
-  <div class="featured">
-    <%= render('_article', :item => item, :is_embedded => true) %>
-  </div>
-<% end %>
-
 <% sorted_articles[current_index, excerpt_count].each do |item| %>
   <% oldest_item = item %>
   <%= render('_article', :item => item, :is_embedded => true) %>
 <% end %>
 
-<%= render('_other_articles_nav', :reference_item => oldest_item, :older_only => true) %>
+<%# TODO: pagination %>
+<%# render('_other_articles_nav', :reference_item => oldest_item, :older_only => true) %>
 
 <div class="clear"></div>
 

@@ -1,0 +1,26 @@
+---
+---
+<% if item[:kind] == 'article' %>
+  <div class="meta">
+    <ul class="tags">
+      <li><%= pretty_time(item[:created_at]) %></li>
+      <% if disqus_shortname %>
+        <% @config[:include_disqus_js] = true %>
+      <% end %>
+      <li>
+        &middot;
+      </li>
+      <li>
+        <a href="<%= route_path(item) %>#disqus_thread"></a>
+      </li>
+      <% if item[:tags] %>
+        <li>&middot;</li>
+        <% item[:tags].sort.each do |tag| %>
+          <li>
+            <a href="/tags/<%= tag %>/" class='tag'><%= tag %></a>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

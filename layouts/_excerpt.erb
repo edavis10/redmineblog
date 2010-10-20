@@ -1,0 +1,15 @@
+---
+---
+<div class="excerpt">
+  <% url = "#{route_path(item)}" %>
+  <h2>
+    <a href="<%=url %>" title="Full article" class="permalink">&laquo; <%= item[:title] %></a>
+  </h2>
+  <div class="body">
+    <p>
+      <%= item[:excerpt] || "!!! Missing excerpt metadata for <code>#{item[:file].path}</code>" %>
+    </p>
+  </div>
+  <%= render('_meta', :item => item) %>
+    
+</div>

@@ -33,7 +33,22 @@ module TaggingExtra
     items = @items if items.nil?
     items.select { |item| has_tag?( item, tag ) }
   end
-  
+
+  #Finds all the items having a any of the specified tags.
+  #By default the method search in all the site
+  #items. Alternatively, an item collection can
+  #be passed as second (optional) parameter, to
+  #restrict the search in the collection.
+  def items_with_tags(tags, items=nil)
+    return [] if tags.nil? || tags.empty?
+    items = @items if items.nil?
+    items.select { |item|
+      tags.any? {|tag|
+        has_tag?( item, tag )
+      }
+    }
+  end
+
   #Count the tags in a given collection of items.
   #By default, the method counts tags in all the
   #site items.

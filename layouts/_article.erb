@@ -36,6 +36,8 @@
 
 <% unless is_embedded %>
 
+<%= render('_other_articles_nav', :reference_item => @item) %>
+
 <%# TODO: extract to helper %>
 <div class="byline">
   <img width="80" height="80" src="http://www.gravatar.com/avatar.php?size=80&amp;gravatar_id=ae959c6836366656b895069d75ad09bf" class="gravatar" alt="gravatar"/>
@@ -51,6 +53,8 @@
   </p>
   <div style="clear: left;"> </div>
 </div>
+
+
 
 <div id="disqus_thread"></div>
 <script type="text/javascript" src="http://disqus.com/forums/redmineblog/embed.js"></script>

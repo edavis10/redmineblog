@@ -18,15 +18,12 @@
     <%= content || partial(item) %>
   </div>
 
+  <hr />
+
   <% if item[:tags] %>
-    <p>Tagged:</p>
-    <ul>
-      <% item[:tags].sort.each do |tag| %>
-        <li>
-          <a href="/tags/<%= tag %>/" class='tag'><%= tag %></a>
-        </li>
-      <% end %>
-      </ul>
+    <p>
+      Tagged: <%= tags_to_list_with_commas(item[:tags]) %>
+    </p>
   <% end %>
 
   <% unless is_embedded %>

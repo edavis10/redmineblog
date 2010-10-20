@@ -93,6 +93,12 @@ module TaggingExtra
 
     ranks
   end
+
+  def tags_to_list_with_commas(tags)
+    tags.sort.collect {|tag|
+      "<a href='/tags/#{tag}/' class='tag'>#{tag}</a>"
+    }.join(', ')
+  end
 end
 
 include TaggingExtra

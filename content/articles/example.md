@@ -2,7 +2,7 @@
 kind: article
 title: ""
 author: "Eric Davis"
-published: false
+publish: false
 categories:
 - Home
 - Code

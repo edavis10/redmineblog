@@ -13,6 +13,10 @@ compile '/assets/css/*/' do
   filter :sass
 end
 
+compile '/htaccess*' do
+  filter :erb
+end
+
 compile '*' do
   # item[:extension] returns 'html.erb' for multi-dotted filename
   ext = item[:extension].nil? ? nil : item[:extension].split('.').last
@@ -36,6 +40,10 @@ end
 
 route '/assets/css/*/' do
   item.identifier.chop + '.css'
+end
+
+route '/htaccess*' do
+  '/.htaccess'
 end
 
 route '*' do

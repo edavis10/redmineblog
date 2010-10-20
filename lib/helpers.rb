@@ -20,9 +20,6 @@ def route_path(item)
   return item.identifier + "index.html" if item[:content_filename].nil?
   
   url = item[:content_filename].gsub(/^content/, '')
-  if item[:kind] == 'article'
-    url = '/articles' + url
-  end
  
   # determine output extension
   extname = '.' + item[:extension].split('.').last

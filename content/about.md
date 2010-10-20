@@ -1,45 +1,37 @@
 ---
-title: About nanoc3_blog
+created_at: 2009-04-13
+kind: article
+title: "About the RedmineBlog.com"
+author: "edavis"
+published: true
+categories:
+- About
+- Home
+
 ---
 
-# About This Site
+ 
+The [RedmineBlog.com][blog] is a blog about the [Redmine Project Management application][redmine] and it's community.  We will be writing about various components of Redmine and it's community including:
 
-nanoc3\_blog is a [nanoc3](http://nanoc.stoneship.org) blog starter kit for Ruby hackers.
-The blog compiles into pure HTML. No javascript (keeping it simple). Ultra-fast and light. No database. No headaches. Host anywhere.
+* [Community news][community]
+* [Detailed feature reviews][code]
+* [Plugin reviews][plugins]
+* [Community interviews][community]
 
-Source is available from my [nanoc3_blog](http://github.com/mgutz/nanoc3_blog) github repository.
-Source is provided under the [FreeBSD License](/license.html).
+We will try to make our content general enough to be used by anyone who currently runs Redmine or is evaluating Redmine, but we are targeting a few specific types of users to start:
 
-Features: 
+* Seasoned Redmine users who are looking for regular updates and upcoming news
+* New users who need detailed information on a specific topic
+* Ruby on Rails developers who are wanting to get into Redmine development
 
-- Minimalist CSS site
-- Uses file extension to determine filter:
-  `{'.erb' => :erb, '.md' => :rdiscount, '.markdown' => :rdiscount,'.haml' => :haml, '.sass' => :sass}`
-- Configurable 0..n full articles on the front page
-- Configurable 0..n excerpted links on the front page
-- Tagging / generation of tag pages
-- Generates tags list
-- Generates archives list
-- Generates navigation links to articles by date
-- [DISQUS](http://www.disqus.com) commenting integration (optional)
-- RSS/atom feed
-- Generates sitemap.xml for SEO
+The site is run by Eric Davis of Little Stream Software with contributions from the Redmine community.  We would love to hear your suggestions about the site or any new story ideas at our [community project][1].
 
-Interested? See [Getting Started With nanoc3_blog](/2010/01/15/getting_started_with_nanoc3_blog.html).
+Eric Davis, [Little Stream Software][lss]
 
-## About The Author
-
-My name is Mario Gutierrez aka `mgutz`. I like minimal-styled blogs.
-
-Visit [my blog](http://mgutz.com)
-
-## Thanks
-
-Thanks to everyone in the 
-[nanoc group](http://groups.google.com/group/nanoc)
-for sample code.
-
-Thanks to [Denis Defreyne](http://stoneship.org/about/), author of nanoc.
-
-I tried [other compilers](http://www.ruby-toolbox.com/categories/static_website_generation.html)
-and chose nanoc3 for its architecture.
+[1]: https://projects.littlestreamsoftware.com/projects/redmine-blog
+[lss]: http://www.littlestreamsoftware.com
+[redmine]: http://www.redmine.org
+[community]: /community
+[code]: /code
+[plugins]: /plugins
+[blog]: http://RedmineBlog.com

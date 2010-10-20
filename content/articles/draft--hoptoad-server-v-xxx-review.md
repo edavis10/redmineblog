@@ -2,7 +2,7 @@
 kind: article
 title: "Hoptoad Server v xxx review"
 author: "edavis"
-published: false
+publish: false
 categories:
 - Home
 - Plugins

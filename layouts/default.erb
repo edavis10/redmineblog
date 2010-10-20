@@ -23,6 +23,26 @@
       "<a href='/'>&laquo; #{site_name}</a>"
     end
   end
+
+  def category_selected?(category)
+    if @item[:categories]
+      @item[:categories].include?(category)
+    end
+  end
+
+  def category_link(name, path)
+    "<li><a href='#{path}' title='#{name}' class='#{ category_selected?(name) ? 'selected' : '' }'>#{name}</a></li>"
+  end
+
+  def category_menu
+    [
+     category_link('Home', '/'),
+     category_link('Community', '/community.html'),
+     category_link('Code', '/code.html'),
+     category_link('Plugins', '/plugins.html'),
+     category_link('Themes', '/themes.html')
+    ].join(' ')
+  end
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -71,12 +91,7 @@
     
     <div id="main-menu">
       <ul>
-        <%# TODO: select current category %>
-        <li><a class="selected" href="/" title="Home">Home</a></li>
-        <li><a class="" href="/community.html" title="Community">Community</a></li>
-        <li><a class="" href="/code.html" title="Code">Code</a></li>
-        <li><a class="" href="/plugins.html" title="Plugins">Plugins</a></li>
-        <li><a class="" href="/themes.html" title="Themes">Themes</a></li>
+        <%= category_menu %>
         <li><a class="" href="/articles/about" title="About">About</a></li>
         <li>
           <a href="https://projects.littlestreamsoftware.com/projects/redmine-blog/issues" target="_blank">Feedback</a>

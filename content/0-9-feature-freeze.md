@@ -8,6 +8,8 @@ published: true
 categories:
 - Home
 - Community
+tags:
+- release
 ---
 
 In case you haven't heard yet, Redmine 0.9 is getting ready to be released.  We've just put it into a feature freeze to get ready for the first Release Candidate.  If you would like to help test the new release, [upgrade to the 0.9-stable branch][upgrade] and let us know about any bugs that you find.  If we can get enough help to test this Release Candidates, we should be able to have a final release in January 2010.

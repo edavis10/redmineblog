@@ -2,18 +2,76 @@
 ---
 
 <% is_embedded ||= false %>
-<div class="article">
-  <h1> 
-    <% if is_embedded %>
-      <a href="<%= route_path(item) %>" title="Full article" class="permalink"><%= item[:title] %></a>
-    <% else %>
-      <%= item[:title] %>
-    <% end %>
-  </h1>
-  
-  <%= render('_meta', :item => item) %>
 
-  <div class="body">
+<h2 class="title"><a href="<%= route_path(item) %>"><%= item[:title] %></a></h2> 
+<div class="post post-<%= item[:identifier] %>">
+
+  <p class="author">
+    Added by <%= item[:author] %>
+    on <%= Time.parse(item[:created_at]).strftime('%B %d, %Y') %>
+    in <% item[:categories].each do |category| %>
+    <a href="/<%= category.downcase %>.html"><%= category %></a>
+    <% end %>
+  </p>
+
+  <hr />
+  
+  <div class="entrybody">
     <%= content || partial(item) %>
   </div>
+
+  <% if item[:tags] %>
+    <p>Tagged:</p>
+    <ul>
+      <% item[:tags].sort.each do |tag| %>
+        <li>
+          <a href="/tags/<%= tag %>/" class='tag'><%= tag %></a>
+        </li>
+      <% end %>
+      </ul>
+  <% end %>
+
+  <% unless is_embedded %>
+    <%= render('_post_ad') %>
+  <% end %>
 </div>
+
+<% unless is_embedded %>
+
+<%# TODO: extract to helper %>
+<div class="byline">
+  <img width="80" height="80" src="http://www.gravatar.com/avatar.php?size=80&amp;gravatar_id=ae959c6836366656b895069d75ad09bf" class="gravatar" alt="gravatar"/>
+  <div class="byline_title">
+    <a href="http://www.littlestreamsoftware.com">Eric Davis</a>
+  </div>
+
+  <p>
+    This blog is a place to learn about the Redmine Project Management application and it's community.
+  </p>
+  <p>
+    I am the founder of <a href="http://www.littlestreamsoftware.com">Little Stream Software</a>, where I help project teams communicate easier by customizing <a href="http://www.redmine.org">Redmine</a>.  If your team could use a customized Redmine to suit your needs, please <a href="http://www.littlestreamsoftware.com/contact.html">contact me</a>.
+  </p>
+  <div style="clear: left;"> </div>
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript" src="http://disqus.com/forums/redmineblog/embed.js"></script>
+<noscript><a href="http://redmineblog.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/redmineblog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<% end %>

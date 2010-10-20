@@ -86,7 +86,7 @@
 </div>
 
 <div id="main">
-  {% include sidebar.html %}
+  <%= render('_sidebar') %>
     <div id="content">
       <%= content %>
     </div>
@@ -98,16 +98,7 @@
 <div id="footer">
   <a href="http://www.redmineblog.com">RedmineBlog.com</a> is Copyright &copy; Little Stream Software.  <a href="http://www.redmine.org">Redmine</a> is Copyright &copy; Jean-Philippe Lang
 </div>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-216202-7");
-pageTracker._trackPageview();
-} catch(err) {}
-</script>
+<%= render('_ganalytics') %>
 </body>
 </html>
 <%# TODO: pick though the haml for some good code to add

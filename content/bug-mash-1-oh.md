@@ -1,6 +1,6 @@
 ---
 created_at: 2010-06-14
-layout: post
+kind: article
 title: "BugMash 1.0"
 author: "Eric Davis"
 published: true

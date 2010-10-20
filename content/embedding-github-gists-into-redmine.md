@@ -1,6 +1,6 @@
 ---
 created_at: 2009-11-11
-layout: post
+kind: article
 title: "Embedding Github's Gist into Redmine"
 author: "Eric Davis"
 published: true

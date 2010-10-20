@@ -1,6 +1,6 @@
 ---
 created_at: 2010-08-22
-layout: post
+kind: article
 title: "Redmine 1.0.1 released"
 author: "Eric Davis"
 published: true

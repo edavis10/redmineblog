@@ -1,6 +1,6 @@
 ---
 created_at: 2010-04-14
-layout: post
+kind: article
 title: "Developer Meeting (Proposed)"
 author: "Eric Davis"
 published: true

@@ -1,6 +1,6 @@
 ---
 created_at: 2010-04-22
-layout: post
+kind: article
 title: "Redmine Client - Access the Redmine API in Ruby"
 author: "Eric Davis"
 published: true

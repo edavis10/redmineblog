@@ -1,6 +1,6 @@
 ---
 created_at: 2009-04-20
-layout: post
+kind: article
 title: "Setup Redmine to send email using GMail"
 author: "edavis"
 published: true

@@ -1,6 +1,6 @@
 ---
 created_at: 2009-05-13
-layout: post
+kind: article
 title: "Copying a Project"
 author: "edavis"
 published: true

@@ -1,6 +1,6 @@
 ---
 created_at: 2009-07-17
-layout: post
+kind: article
 title: "Community Update #3"
 author: "edavis"
 published: true

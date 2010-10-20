@@ -1,7 +1,7 @@
 ---
 created_at: 2009-12-30
 kind: article
-layout: post
+kind: article
 title: "0.9 Feature Freeze"
 author: "Eric Davis"
 published: true

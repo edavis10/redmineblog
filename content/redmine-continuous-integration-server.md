@@ -1,6 +1,6 @@
 ---
 created_at: 2010-03-24
-layout: post
+kind: article
 title: "Redmine Continuous Integration Server"
 author: "Eric Davis"
 published: true

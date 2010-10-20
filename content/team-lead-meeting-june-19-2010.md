@@ -1,6 +1,6 @@
 ---
 created_at: 2010-06-14
-layout: post
+kind: article
 title: "Team Lead Meeting 2010-06-19"
 author: "Eric Davis"
 published: true

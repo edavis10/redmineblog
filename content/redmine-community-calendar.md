@@ -1,6 +1,6 @@
 ---
 created_at: 2010-05-14
-layout: post
+kind: article
 title: "Redmine Community Calendar"
 author: "Eric Davis"
 published: true

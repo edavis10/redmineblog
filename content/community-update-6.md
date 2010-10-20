@@ -1,6 +1,6 @@
 ---
 created_at: 2010-01-21
-layout: post
+kind: article
 title: "Community Update #6"
 author: "Eric Davis"
 published: true

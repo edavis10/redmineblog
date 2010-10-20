@@ -1,6 +1,6 @@
 ---
 created_at: 2010-03-23
-layout: post
+kind: article
 title: "Community Updates Resuming Soon"
 author: "Eric Davis"
 published: true

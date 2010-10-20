@@ -1,6 +1,6 @@
 ---
 created_at: 2010-04-10
-layout: post
+kind: article
 title: "YARD - Local Redmine Documentation Download"
 author: "Eric Davis"
 published: true

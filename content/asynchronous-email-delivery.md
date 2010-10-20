@@ -1,6 +1,6 @@
 ---
 created_at: 2009-10-09
-layout: post
+kind: article
 title: "Asynchronous Email Delivery"
 author: "Eric Davis"
 published: true

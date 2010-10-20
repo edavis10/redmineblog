@@ -1,6 +1,6 @@
 ---
 created_at: 2009-12-10
-layout: post
+kind: article
 title: "Question for the Redmine Community: Bug fix releases or release new plugins?"
 author: "Eric Davis"
 published: true

@@ -1,6 +1,6 @@
 ---
 created_at: 2009-06-04
-layout: post
+kind: article
 title: "Redmine Hosting - SourceRepo.com"
 author: "edavis"
 published: true

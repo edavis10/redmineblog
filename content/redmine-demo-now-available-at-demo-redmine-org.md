@@ -1,6 +1,6 @@
 ---
 created_at: 2009-06-15
-layout: post
+kind: article
 title: "Redmine Demo - now available at demo.redmine.org"
 author: "edavis"
 published: true

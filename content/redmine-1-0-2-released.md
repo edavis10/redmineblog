@@ -1,12 +1,15 @@
 ---
 created_at: 2010-09-26
-layout: post
+kind: article
 title: "Redmine 1.0.2 released"
 author: "Eric Davis"
 published: true
 categories:
 - Home
 - Community
+tags:
+- release
+- 1.0.0
 ---
 
 [Redmine 1.0.2][release] has been released to [Rubyforge](http://rubyforge.org/frs/?group_id=1850).  This a bugfix release for all Redmine 1.0 users.  Over 53 changes have been added since [Redmine 1.0.1][1.0.1 ANN] so this should be a very stable release.  Upgrading is recommended for all 0.9.x and 1.0.0 users.

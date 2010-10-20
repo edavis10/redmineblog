@@ -1,6 +1,6 @@
 ---
 created_at: 2009-05-06
-layout: post
+kind: article
 title: "Schedules plugin v 0.4.0 review"
 author: "edavis"
 published: true

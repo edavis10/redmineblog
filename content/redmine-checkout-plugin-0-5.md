@@ -1,6 +1,6 @@
 ---
 created_at: 2010-07-22
-layout: post
+kind: article
 title: "Redmine Checkout Plugin 0.5"
 author: "Eric Davis"
 published: true

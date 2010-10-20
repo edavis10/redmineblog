@@ -1,6 +1,6 @@
 ---
 created_at: 2010-07-20
-layout: post
+kind: article
 title: "Redmine 1.0 Feature: Caching Text Formatting"
 author: "Eric Davis"
 published: true

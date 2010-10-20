@@ -1,6 +1,6 @@
 ---
 created_at: 2010-08-09
-layout: post
+kind: article
 title: "Redmine Tips Mailing List Launch"
 author: "Eric Davis"
 published: true

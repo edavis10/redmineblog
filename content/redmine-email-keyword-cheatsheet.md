@@ -1,6 +1,6 @@
 ---
 created_at: 2010-06-08
-layout: post
+kind: article
 title: "Email Keyword Cheatsheet"
 author: "Eric Davis"
 published: true

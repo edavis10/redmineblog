@@ -1,6 +1,6 @@
 ---
 created_at: 2009-11-16
-layout: post
+kind: article
 title: "Redmine 0.8.7 Released"
 author: "Eric Davis"
 published: true

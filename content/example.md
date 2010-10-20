@@ -1,5 +1,5 @@
 ---
-layout: post
+kind: article
 title: ""
 author: "Eric Davis"
 published: false

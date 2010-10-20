@@ -1,6 +1,6 @@
 ---
 created_at: 2009-09-23
-layout: post
+kind: article
 title: "Rails 2.3.4 Support"
 author: "Eric Davis"
 published: true

@@ -1,6 +1,6 @@
 ---
 created_at: 2009-09-04
-layout: post
+kind: article
 title: "RedmineBlog.com now powered by Jekyll"
 author: "Eric Davis"
 published: true

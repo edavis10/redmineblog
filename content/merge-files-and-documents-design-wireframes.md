@@ -1,6 +1,6 @@
 ---
 created_at: 2010-07-29
-layout: post
+kind: article
 title: "Merge Files and Documents - Design Wireframes Posted"
 author: "Eric Davis"
 published: true

@@ -1,6 +1,6 @@
 ---
 created_at: 2010-08-27
-layout: post
+kind: article
 title: "RedmineTips.com - Web Archive of the Redmine Tips Mailing List"
 author: "Eric Davis"
 published: true

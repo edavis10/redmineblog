@@ -53,3 +53,8 @@ is_hidden: true
 RedirectMatch 301 ^/articles/<%= old_path %>/?$ /articles/<%= new_path %>
 RedirectMatch 301 ^/articles/<%= old_path %>/index.html$ /articles/<%= new_path %>
 <% end %>
+
+RedirectMatch 301 ^/articles/plugins.html$ /articles/categories/plugins/
+RedirectMatch 301 ^/articles/community.html$ /articles/categories/community/
+RedirectMatch 301 ^/articles/code.html$ /articles/categories/code/
+RedirectMatch 301 ^/articles/themes.html$ /articles/categories/themes/

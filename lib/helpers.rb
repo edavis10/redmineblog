@@ -53,6 +53,18 @@ def create_tag_pages
   end
 end
 
+# Creates in-memory category pages from partial: layouts/_tag_page.haml
+def create_category_pages
+  ['Community', 'Code', 'Plugins', 'Themes'].each do |category|
+    items << Nanoc3::Item.new(
+      "<%= render('_category_page', :category => '#{category.downcase}') %>",           # use locals to pass data
+      { :title => "Category Page: #{category}", :is_hidden => true}, # do not include in sitemap.xml
+      "/categories/#{category.downcase}/",                                     # identifier
+      :binary => false
+    )
+  end
+end
+
 
 def add_update_item_attributes
   changes = MGutz::FileChanges.new

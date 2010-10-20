@@ -8,7 +8,7 @@
     Added by <%= item[:author] %>
     on <%= Time.parse(item[:created_at]).strftime('%B %d, %Y') %>
     in <% item[:categories].each do |category| %>
-    <a href="/<%= category.downcase %>.html"><%= category %></a>
+      <%= link_to_category(category) %>
     <% end %>
   </p>
 

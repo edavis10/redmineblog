@@ -1,0 +1,11 @@
+---
+---
+<h1>
+  <%= category.capitalize %>
+</h1>
+
+<div class="tag-page">
+  <% items_with_category(category).each do |item| %>
+    <%= render('_article', :item => item, :is_embedded => true) %>
+  <% end %>
+</div>

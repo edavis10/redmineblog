@@ -6,6 +6,7 @@ preprocess do
 
   copy_static
   create_tag_pages
+  create_category_pages
   add_update_item_attributes
 end
 

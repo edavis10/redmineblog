@@ -19,8 +19,8 @@ deploy:
 base_url: http://nanoc-blog-kit.mgutz.com
 
 google_analytics:
-  domain: mgutz.com
-  site_id: UA-9655468-1
+  domain: ''
+  site_id: ''
 
 # currently used by logo
 site_name: Redmine Blog - The Official Redmine blog
@@ -29,7 +29,7 @@ site_name: Redmine Blog - The Official Redmine blog
 featured_count: 0
 
 # number of excerpted posts to display on front
-excerpt_count: 6
+excerpt_count: 10
 
 # number of other articles to reference at bottom of each article
 other_articles_max: 3
